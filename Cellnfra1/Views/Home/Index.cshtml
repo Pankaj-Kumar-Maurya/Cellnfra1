@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    #hero {
+        font-family: "Gotham", Arial;
+        background-color: #121b2c;
+        height: 100vh;
+        background-image: url('/assets/home-banner-left-graphic-02.svg'), url('/assets/home-banner-right-graphic.svg');
+        background-repeat: no-repeat, no-repeat;
+        background-position: left bottom, right bottom;
+        background-size: auto, auto; /* Adjust as needed to control the size of the images */
+        overflow-x: hidden;
+    }
+</style>
+<div class="container-fluid p-0">
+    <section id="hero">
+        <div class="container h-100" >
+
+            <!-- Row with Image and Text -->
+            <div class="row d-flex justify-content-between align-items-center h-100">
+
+                <!-- Text Column -->
+                <div class="col-lg-6 col-sm-12">
+                    <h1 class="text-white fw-bold display-5">Extend the Life of Your</h1>
+                    <h1 class="text-white fw-bold display-4 mb-4">Network.</h1>
+                    <p class="text-white fs-4">Build, maintain, and expand your network the right way with expert guidance from Tempest.</p>
+                </div>
+                <!-- Image Column -->
+                <div class="col-lg-6 col-sm-12">
+                    <img src="~/assets/Tempes-Multi-Vendor-NetworkSolutions.png" alt="WhatWeDo" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

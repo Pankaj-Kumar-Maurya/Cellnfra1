@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Cellnfra1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Cellnfra1.styles.css" asp-append-version="true" />
+    <style>
+        .bg-custom{
+            background-color: #121b2c;
+            
+        }       
+       
+    </style>
+</head>
+<body>
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm  bg-custom box-shadow">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">Cellnfra</a>
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" style="color:white;background-color:white;"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="WhyUs">Why Us</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Service
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="~/Home/ElectronicsRepairs">Electronics Repairs</a></li>
+                                @*  <li><a class="dropdown-item" href="#">Assembly & Test</a></li>
+                                <li><a class="dropdown-item" href="#">Electronic Refurbish</a></li>
+                                <li><a class="dropdown-item" href="#">Electronics Parts Sales</a></li>
+                                <li><a class="dropdown-item" href="#">Reverse Logistics & Supply Chain</a></li>
+                                <li><a class="dropdown-item" href="#">Bespoke Solutions</a></li> *@
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Markets
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="~/Home/Telecom">Telecom</a></li>
+                                @*  <li><a class="dropdown-item" href="#">CPE Data Network</a></li>
+                                <li><a class="dropdown-item" href="#">Industrial Electronics</a></li>
+                                <li><a class="dropdown-item" href="#">Power & Energy</a></li>
+                                <li><a class="dropdown-item" href="#">Optical Networks</a></li>     *@                            
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="EWasteManagement">E-Waste Management</a>
+                        </li>
+                        @* <li class="nav-item ">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                        </li> *@
+
+                    </ul>
+                    <ul class="navbar-nav ms-lg-auto border border-dark border-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white fw-bold" href="http://cellnfra.alfaship.in/" target="_blank">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Cellnfra1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
