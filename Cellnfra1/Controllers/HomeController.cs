@@ -18,6 +18,28 @@ namespace Cellnfra1.Controllers
             return View();
         }
 
+        public IActionResult WhyUs()
+        {
+            return View();
+        }
+        public IActionResult ElectronicsRepairs()
+        {
+            return View();
+        }
+
+        public IActionResult Telecom()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult EWasteManagement()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
