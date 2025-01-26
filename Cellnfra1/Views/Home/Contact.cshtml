@@ -1,5 +1,90 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<style>
+    h2 {
+        font-family: "Gotham", Arial;
+        font-weight: bold;
+    }
+
+    .sectionGrdient {
+        color: white;
+        background-color: #121b2c;
+        background-image: radial-gradient(59% 78% at 7% -2%, #1F3745 0%, transparent 100%), radial-gradient(56% 90% at 88% 46%, #2A1D30 0%, transparent 100%);
+    }
+    .btnColor{
+        background-color: #68e1fd;
+    }
+
+</style>
+<div class="container-fluid py-5" style="padding-top: 4rem !important;">
+    <section id="contact" class="mb-5">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Form Section -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <h2 class="text-center">Get In Touch</h2>
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="inputName4" class="form-label">Name</label>
+                            <input type="text" class="form-control w-100" id="inputName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputPhone4" class="form-label">Phone</label>
+                            <input type="text" class="form-control w-100" id="inputPhone4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control w-100" id="inputEmail" placeholder="example@gmail.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputService" class="form-label">Service</label>
+                            <select id="inputService" class="form-select w-100">
+                                <option selected>Choose...</option>
+                                <option>Electronics Repairs</option>
+                                <option>Telecom</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btnColor w-50">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact Info Section -->
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <h2 class="text-center mb-4">Direct Contact</h2>
+                    <ul class="contact-info-list list-unstyled">
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-phone text-primary fa-2x me-3"></i>
+                            <a href="tel:+919353762223" class="text-dark text-decoration-none">+91 93537 62223</a>
+                        </li>
+                        <li class="d-flex align-items-start mb-3">
+                            <i class="fas fa-envelope text-success fa-2x me-3"></i>
+                            <a href="mailto:info@cellnfra.com" class="text-dark text-decoration-none">info@cellnfra.com</a>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-map-marker-alt text-danger fa-2x me-3"></i>
+                            <span class="text-dark text-wrap">
+                                #4/5, 1st Floor, Maruti Industrial Park, Whitefield Road, Next to Hotel Zuri Rajapalya, Hoody Village, Bengaluru, 560048, Karnataka
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/678d0507825083258e077f9c/1ihvdn9k9';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
