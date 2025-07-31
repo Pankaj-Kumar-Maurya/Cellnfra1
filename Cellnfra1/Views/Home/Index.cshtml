@@ -5,13 +5,13 @@
     #hero {
         font-family: "Gotham", Arial;
         background-color: #121b2c;
-        
         background-image: url('/assets/home-banner-left-graphic-02.svg'), url('/assets/home-banner-right-graphic.svg');
         background-repeat: no-repeat, no-repeat;
         background-position: left bottom, right bottom;
-        background-size: auto, auto; /* Adjust as needed to control the size of the images */
+        background-size: auto, auto;
         overflow-x: hidden;
     }
+
 
     h1 {
         font-family: "Gotham", Arial;
@@ -46,37 +46,13 @@
 <div class="container-fluid p-0">
     <section id="hero">
         <div class="container-fluid p-0">
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <img src="~/assets/cellBan1.png" class="d-block w-100" alt="Slide 1">
-                    </div>
-
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <img src="~/assets/cellBan2.png" class="d-block w-100" alt="Slide 2">
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <img src="~/assets/cellBan3.png" class="d-block w-100" alt="Slide 3">
-                    </div>
-
-                   
-                </div>
-
-                <!-- Optional Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
+            <video autoplay muted loop playsinline class="w-100">
+                <source src="~/assets/cellVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
+
 
 
     <section style="background-color: #f2f4f6; padding: 40px 0;" class="mb-5">
