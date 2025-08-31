@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .bg-custom {
-            background-color: #007bff !important; /* Bootstrap primary blue */
+            background-color: #007e44 !important; /* Bootstrap primary blue */
         }
         .navbar {
             background-color: transparent !important;
@@ -28,14 +28,59 @@
             color: #B0B9C7;
             text-decoration: none;
             display: inline-block;
-            margin-bottom: 20px;
+            
         }
         .effectHover li a:hover {
             color: black;
         }
+
+        .blue-ribbon {
+            background-color: #25376A;
+            ; /* Bootstrap blue */
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+
+            .blue-ribbon .left,
+            .blue-ribbon .right {
+                display: flex;
+                align-items: center;
+                gap: 25px;
+            }
+
+            .blue-ribbon a {
+                color: white;
+                text-decoration: none;
+            }
+
+                .blue-ribbon a:hover {
+                    text-decoration: underline;
+                }
+
+        .flag {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
+    <div class="blue-ribbon">
+        <div class="left">
+            
+        </div>
+        <div class="right">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+                <i class="fab fa-linkedin-in fa-2x"></i>
+            </a>
+            <span class="flag"><img src="~/assets/world.png" width="30" /></span>
+            <span>+91 93537 62223</span>
+            <a href="mailto:contact@example.com">info@cellnfra.com</a>
+        </div>
+    </div>
     <header class="sticky-top z-3 bg-custom">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow">
             <div class="container-fluid">
@@ -45,7 +90,7 @@
                     <i class="fa-solid fa-bars " style="color: #68e1fd;"></i>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1" style="gap: 35px; margin-left:30px;">
                         <li class="nav-item">
                             <a class="nav-link text-white fs-4" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
@@ -118,14 +163,12 @@
                             <h2 class="mb-4">network equipment and services needs.</h2>
 
                             <!-- Description -->
-                            <p class="lead mb-4">
+                            @* <p class="lead mb-4">
                                 Call us
                                 <span style="color:#121b2c;">805.879.5050</span>
                                 or
                                 <span style="color:#121b2c;">Request a Quote</span> online.
-                            </p>
-
-                          
+                            </p>    *@                       
                         </div>
                     </div>
                 </div>
@@ -138,11 +181,17 @@
                 <!-- Address Section -->
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                     <h5 class="fw-bold mb-3">Celln<span style="color: #68e1fd;">fra</span></h5>
-                    <p class="mb-2">1461 S. Belt Line Road, Suite 100</p>
-                    <p>Coppell, TX 75019</p>
+                    <p>#4/5, 1st Floor</p>
+                    <p>Maruti Industrial Park</p>
+                    <p>Whitefield Road</p>
+                    <p>Next to Hotel Zuri Rajapalya</p>
+                    <p>Hoody Village</p>
+                    <p>Bengaluru, 560048</p>
+                    <p>Karnataka</p>
+
                     <h6 class="fw-bold mt-4">For Sales</h6>
-                    <p><a href="tel:8058795050" style="color: #68e1fd; text-decoration: none;">805-879-5050</a></p>
-                    <p><a href="mailto:sales@tempestns.com" style="color: #68e1fd; text-decoration: none;">sales@tempestns.com</a></p>
+                    <p><a href="tel:+91 93537 62223" style="color: #68e1fd; text-decoration: none;">+91 93537 62223</a></p>
+                    <p><a href="mailto:sales@tempestns.com" style="color: #68e1fd; text-decoration: none;">info@cellnfra.com</a></p>
                 </div>
 
                 <!-- Select Highlights Section -->
