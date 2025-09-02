@@ -4,46 +4,180 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cellnfra1</title>
+    <link rel="icon" href="~/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Cellnfra1.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* Custom navbar background */
         .bg-custom {
-            background-color: #035a32 !important; /* Bootstrap primary blue */
+            background-color: #035a32 !important;
         }
+
+        /* Navbar styles */
         .navbar {
-            background-color: transparent !important;
+            background: transparent !important;
             box-shadow: none !important;
+            position: relative;
+            z-index: 1000;
         }
+
+        .dropdown {
+            position: relative;
+        }
+
         .navbar .nav-link,
         .navbar .navbar-brand {
             color: #fff !important;
         }
-        .navbar .nav-link:hover,
-        .navbar .navbar-brand:hover {
-            color: black !important;
-        }
-        .effectHover li a {
+
+            .navbar .nav-link:hover,
+            .navbar .navbar-brand:hover {
+                color: black !important;
+            }
+
+        /* Hover effect for custom links */
+        .effectHover a {
             color: #B0B9C7;
             text-decoration: none;
             display: inline-block;
-            
         }
-        .effectHover li a:hover {
-            color: black;
+
+            .effectHover a:hover {
+                color: black;
+            }
+
+        /* Mega Menu Styles */
+        .mega-menu {
+            position: absolute !important;
+            width: 80vw !important;
+            left: 50% !important;
+            right: 0 !important;
+            transform: translateX(-20%) !important;
+            top: 100% !important;
+            border: none !important;
+            border-radius: 10px !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+            display: none !important;
+            margin-top: 0 !important;
+            z-index: 9999 !important;
+            /* Glassmorphism Effect */
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(20px) !important;
+            -webkit-backdrop-filter: blur(20px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        }
+
+        .mega-menu-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mega-menu-item {
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            /* Glassmorphism for menu items */
+            /* background: rgba(255, 255, 255, 0.25); */
+            background: white;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+            .mega-menu-item:hover {
+                background: rgba(255, 255, 255, 0.35);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+
+            .mega-menu-item a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                display: block;
+            }
+
+            .mega-menu-item:hover a {
+                color: #035a32;
+            }
+
+        /* Show mega menu on hover */
+        .navbar .dropdown:hover .mega-menu {
+            display: block !important;
+        }
+
+        /* All dropdowns use mega menu style */
+        .navbar .dropdown:hover .mega-menu {
+            display: block !important;
+        }
+
+        /* Smaller mega menu for items with fewer options */
+        .mega-menu.small {
+            width: 40vw !important;
+            transform: translateX(-25%) !important;
+        }
+
+        /* Auto-adjust grid for fewer items */
+        .mega-menu-content.small {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 1200px) {
+            .mega-menu-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+                .mega-menu-content.small {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+        }
+
+        @@media (max-width: 992px) {
+            .mega-menu-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+                .mega-menu-content.small {
+                    grid-template-columns: 1fr;
+                }
+        }
+
+        @@media (max-width: 768px) {
+            .mega-menu-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mega-menu {
+                position: absolute !important;
+                width: 90vw !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+            }
+
+                .mega-menu.small {
+                    width: 90vw !important;
+                    transform: translateX(-50%) !important;
+                }
         }
 
         .blue-ribbon {
             background-color: #25376A;
-            ; /* Bootstrap blue */
             color: white;
             padding: 10px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             font-family: Arial, sans-serif;
-            font-size: 16px;
+            font-size: 14px;
         }
 
             .blue-ribbon .left,
@@ -62,31 +196,26 @@
                     text-decoration: underline;
                 }
 
-        .flag {
-            font-size: 18px;
-        }
         @@media (max-width: 426px) {
             .blue-ribbon .right {
-                gap:10px;
+                gap: 10px;
             }
 
-            .blue-ribbon{
-                font-size:11px;
+            .blue-ribbon {
+                font-size: 11px;
             }
-
         }
     </style>
 </head>
 <body>
     <div class="blue-ribbon">
         <div class="left">
-            
         </div>
         <div class="right">
             <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
                 <i class="fab fa-linkedin-in fa-2x"></i>
             </a>
-            <span class="flag"><img src="~/assets/world.png" width="30" /></span>
+            <span><img src="~/assets/world.png" width="30" /></span>
             <span>+91 93537 62223</span>
             <a href="mailto:contact@example.com">info@cellnfra.com</a>
         </div>
@@ -94,64 +223,77 @@
     <header class="sticky-top z-3 bg-custom">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/assets/cellnfralogo1.png" width="190px"/></span></a>
-                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-bars " style="color: #68e1fd;"></i>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/assets/cellnfralogo1.png" width="170px" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <i class="fa-solid fa-bars" style="color: #68e1fd;"></i>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1" style="gap: 35px; margin-left:30px;">
                         <li class="nav-item">
-                            <a class="nav-link text-white fs-4" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fs-4" asp-area="" asp-controller="Home" asp-action="WhyUs">Why Us</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white fs-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Service
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="~/Home/ElectronicsRepairs">Electronics Repairs</a></li>
-                                @*  <li><a class="dropdown-item" href="#">Assembly & Test</a></li>
-                                <li><a class="dropdown-item" href="#">Electronic Refurbish</a></li>
-                                <li><a class="dropdown-item" href="#">Electronics Parts Sales</a></li>
-                                <li><a class="dropdown-item" href="#">Reverse Logistics & Supply Chain</a></li>
-                                <li><a class="dropdown-item" href="#">Bespoke Solutions</a></li> *@
 
-                            </ul>
-                        </li>
+                        <!-- Service Menu with Mega Menu -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white fs-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Markets
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="~/Home/Telecom">Telecom</a></li>
-                                @*  <li><a class="dropdown-item" href="#">CPE Data Network</a></li>
-                                <li><a class="dropdown-item" href="#">Industrial Electronics</a></li>
-                                <li><a class="dropdown-item" href="#">Power & Energy</a></li>
-                                <li><a class="dropdown-item" href="#">Optical Networks</a></li>     *@                            
-                            </ul>
+                            <a class="nav-link dropdown-toggle text-white fs-5" href="#">Service</a>
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="mega-menu-item">
+                                        <a href="~/Home/ElectronicsRepairs">Electronics Repairs</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Assembly & Test</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Electronic Refurbish</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Electronics Parts Sales</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Reverse Logistics & Supply Chain</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Bespoke Solutions</a>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fs-4" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fs-4" asp-area="" asp-controller="Home" asp-action="EWasteManagement">E-Waste Management</a>
-                        </li>
-                        @* <li class="nav-item ">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                        </li> *@
 
+                        <!-- Markets Menu with Mega Menu (smaller) -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white fs-5" href="#">Markets</a>
+                            <div class="dropdown-menu mega-menu small">
+                                <div class="mega-menu-content small">
+                                    <div class="mega-menu-item">
+                                        <a href="~/Home/Telecom">Telecom</a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">Power & Energy</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
                     </ul>
-                    <ul class="navbar-nav ms-lg-auto ">
+
+                    <!-- Right Side -->
+                    <ul class="navbar-nav ms-lg-auto">
                         <li class="nav-item">
-                            <a class="nav-link text-white fw-bold fs-4" href="http://cellnfra.alfaship.in/" target="_blank">RMS Login</a>
+                            <a class="nav-link text-white fw-bold fs-5" href="http://cellnfra.alfaship.in/" target="_blank">RMS Login</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+
     </header>
     <div>
         <main role="main">
@@ -212,7 +354,7 @@
                         <li><a href="/">Optical Networks</a></li>
                         <li><a href="/">Industrial Electronics</a></li>
                         <li><a href="/">CPE Data Networks</a></li>
-                       @*  <li><a href="/" >Careers</a></li>
+                        @*  <li><a href="/" >Careers</a></li>
                         <li><a href="/" >Executive Management Team</a></li>
                         <li><a href="/" >SFP Transceivers</a></li>
                         <li><a href="/" >Site Monitoring</a></li> *@
@@ -223,11 +365,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                     <h6 class="fw-bold mb-3">About Company</h6>
                     <ul class="list-unstyled effectHover">
-                        <li><a href="/Home/WhyUs" >About Company</a></li>
-                        <li><a href="/Home/Contact" >Contact Us</a></li>
-                        <li><a href="/" >Privacy policy</a></li>
-                        <li><a href="/" >Mission & Vision</a></li>
-                        <li><a href="/" >Terms & Conditions</a></li>
+                        <li><a href="/Home/WhyUs">About Company</a></li>
+                        <li><a href="/Home/Contact">Contact Us</a></li>
+                        <li><a href="/">Privacy policy</a></li>
+                        <li><a href="/">Mission & Vision</a></li>
+                        <li><a href="/">Terms & Conditions</a></li>
                     </ul>
                 </div>
 
@@ -235,11 +377,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <h6 class="fw-bold mb-3">Life Cycles Services</h6>
                     <ul class="list-unstyled effectHover">
-                        <li><a href="/Home/ElectronicsRepairs" >Electronics Repairs</a></li>
-                        <li><a href="/" >Assembly & Retrofitting</a></li>
-                        <li><a href="/" >Refurbished Electronics</a></li>
-                        <li><a href="/" >Reverse logistics and supply chain</a></li>
-                        <li><a href="/" >Bespoke Solutions</a></li>
+                        <li><a href="/Home/ElectronicsRepairs">Electronics Repairs</a></li>
+                        <li><a href="/">Assembly & Retrofitting</a></li>
+                        <li><a href="/">Refurbished Electronics</a></li>
+                        <li><a href="/">Reverse logistics and supply chain</a></li>
+                        <li><a href="/">Bespoke Solutions</a></li>
                         @* <li><a href="#" >Equipment Manufacturers</a></li>
                         <li><a href="#" >Enterprise</a></li>
                         <li><a href="#" >DAS Neutral Hosts</a></li> *@
@@ -249,19 +391,17 @@
         </div>
     </section>
 
-
-
     <footer class="border-top footer text-muted" style="background-color: #1a1f36; color:#8e97a0 !important;">
         <div class="container">
-            &copy; 2025 - Cellnfra 
-       
-           
+            &copy; 2025 - Cellnfra
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
