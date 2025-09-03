@@ -1,6 +1,6 @@
-using System.Diagnostics;
 using Cellnfra1.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace Cellnfra1.Controllers
 {
@@ -23,6 +23,22 @@ namespace Cellnfra1.Controllers
             return View();
         }
         public IActionResult ElectronicsRepairs()
+        {
+            return View();
+        }
+        public IActionResult ElectronicRefurbish()
+        {
+            return View();
+        }
+        public IActionResult AssemblyTest()
+        {
+            return View();
+        }
+        public IActionResult ElectronicPartsSales()
+        {
+            return View();
+        }
+        public IActionResult ReverseLogistics()
         {
             return View();
         }
