@@ -42,6 +42,11 @@ namespace Cellnfra1.Controllers
         {
             return View();
         }
+        public IActionResult BespokeSolutions()
+        {
+            return View();
+        }
+
 
         public IActionResult Telecom()
         {
