@@ -34,7 +34,8 @@
 
             .navbar .nav-link:hover,
             .navbar .navbar-brand:hover {
-                color: black !important;
+                color: #25376A !important;
+                text-shadow: 1px 1px 25px white;
             }
 
         /* Hover effect for custom links */
@@ -131,7 +132,8 @@
         }
 
         .nav-link {
-            text-shadow: 2px 2px 5px black;
+            font-weight:500;
+            text-shadow: 2px 2px 1px #00000042;
         }
         /* Responsive adjustments */
         @@media (max-width: 1200px) {
@@ -288,9 +290,12 @@
                                 </div>
                             </div>
                         </li>
-
+                        
                         <li class="nav-item">
                             <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="EWasteManagement">E-waste Management</a>
                         </li>
                     </ul>
 
