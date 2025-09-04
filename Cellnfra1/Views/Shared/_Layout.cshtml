@@ -49,129 +49,9 @@
                 color: black;
             }
 
-        /* Mega Menu Styles */
-        .mega-menu {
-            position: absolute !important;
-            width: 80vw !important;
-            left: 50% !important;
-            right: 0 !important;
-            transform: translateX(-20%) !important;
-            top: 100% !important;
-            border: none !important;
-            border-radius: 10px !important;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-            display: none !important;
-            margin-top: 0 !important;
-            z-index: 9999 !important;
-            /* Glassmorphism Effect */
-            background: rgba(255, 255, 255, 0.15) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        }
-
-        .mega-menu-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .mega-menu-item {
-            padding: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            /* Glassmorphism for menu items */
-            /* background: rgba(255, 255, 255, 0.25); */
-            background: white;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-            .mega-menu-item:hover {
-                background: rgba(255, 255, 255, 0.35);
-                transform: translateY(-2px);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-                border: 1px solid rgba(255, 255, 255, 0.4);
-            }
-
-            .mega-menu-item a {
-                text-decoration: none;
-                color: #333;
-                font-weight: 500;
-                display: block;
-            }
-
-            .mega-menu-item:hover a {
-                color: #035a32;
-            }
-
-        /* Show mega menu on hover */
-        .navbar .dropdown:hover .mega-menu {
-            display: block !important;
-        }
-
-        /* All dropdowns use mega menu style */
-        .navbar .dropdown:hover .mega-menu {
-            display: block !important;
-        }
-
-        /* Smaller mega menu for items with fewer options */
-        .mega-menu.small {
-            width: 40vw !important;
-            transform: translateX(-25%) !important;
-        }
-
-        /* Auto-adjust grid for fewer items */
-        .mega-menu-content.small {
-            grid-template-columns: repeat(2, 1fr);
-            max-width: 600px;
-        }
-
         .nav-link {
-            font-weight:500;
+            font-weight: 500;
             text-shadow: 2px 2px 1px #00000042;
-        }
-        /* Responsive adjustments */
-        @@media (max-width: 1200px) {
-            .mega-menu-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-                .mega-menu-content.small {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-        }
-
-        @@media (max-width: 992px) {
-            .mega-menu-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-                .mega-menu-content.small {
-                    grid-template-columns: 1fr;
-                }
-        }
-
-        @@media (max-width: 768px) {
-            .mega-menu-content {
-                grid-template-columns: 1fr;
-            }
-
-            .mega-menu {
-                position: absolute !important;
-                width: 90vw !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-            }
-
-                .mega-menu.small {
-                    width: 90vw !important;
-                    transform: translateX(-50%) !important;
-                }
         }
 
         .blue-ribbon {
@@ -210,6 +90,175 @@
                 font-size: 11px;
             }
         }
+
+        /* STYLES FOR SCREENS >= 1024PX (ORIGINAL DESIGN) */
+        @@media (min-width: 1024px) {
+            /* Mega Menu Styles */
+            .mega-menu {
+                position: absolute !important;
+                width: 70vw !important;
+                left: 50% !important;
+                right: 0 !important;
+                transform: translateX(-20%) !important;
+                top: 100% !important;
+                border: none !important;
+                border-radius: 10px !important;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+                display: none !important;
+                margin-top: 0 !important;
+                z-index: 9999 !important;
+                /* Glassmorphism Effect */
+                background: rgba(255, 255, 255, 0.15) !important;
+                backdrop-filter: blur(20px) !important;
+                -webkit-backdrop-filter: blur(20px) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            }
+
+            .mega-menu-content {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                padding: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .mega-menu-item {
+                padding: 15px;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                /* Glassmorphism for menu items */
+                background: white;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+            }
+
+                .mega-menu-item:hover {
+                    background: rgba(255, 255, 255, 0.35);
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+                    border: 1px solid rgba(255, 255, 255, 0.4);
+                }
+
+                .mega-menu-item a {
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: 500;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+                .mega-menu-item a img{
+                    border-radius:5px;
+                }
+
+                .mega-menu-item:hover a {
+                    color: white;
+                }
+            /* Show mega menu on hover */
+            .navbar .dropdown:hover .mega-menu {
+                display: block !important;
+            }
+            /* Smaller mega menu for items with fewer options */
+            .mega-menu.small {
+                width: 40vw !important;
+                transform: translateX(-25%) !important;
+            }
+            /* Auto-adjust grid for fewer items */
+            .mega-menu-content.small {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 600px;
+            }
+            /* Hide simple dropdowns on large screens */
+            .simple-dropdown {
+                display: none !important;
+            }
+            /* Responsive adjustments for mega menu */
+            @@media (max-width: 1200px) {
+                .mega-menu-content {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+
+                    .mega-menu-content.small {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+            }
+        }
+
+        /* STYLES FOR SCREENS < 1024PX (SIMPLE DROPDOWNS) */
+        @@media (max-width: 1023px) {
+            /* Hide mega menus on smaller screens */
+            .mega-menu {
+                display: none !important;
+            }
+            /* Simple Bootstrap dropdowns */
+            .simple-dropdown {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1000;
+                display: none;
+                min-width: 280px;
+                padding: 15px 0;
+                margin: 0;
+                background-color: #ffffff;
+                border: 1px solid rgba(0,0,0,.15);
+                border-radius: 8px;
+                box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            }
+
+                .simple-dropdown.show {
+                    display: block;
+                }
+
+                .simple-dropdown .dropdown-item {
+                    display: block;
+                    width: 100%;
+                    padding: 12px 20px;
+                    clear: both;
+                    font-weight: 400;
+                    color: #333;
+                    text-align: inherit;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    background-color: transparent;
+                    border: 0;
+                    transition: all 0.2s ease;
+                }
+
+                    .simple-dropdown .dropdown-item:hover {
+                        color: #85ad46;
+                        background-color: #f8f9fa;
+                    }
+
+                    .simple-dropdown .dropdown-item img {
+                        width: 24px;
+                        height: 16px;
+                        margin-right: 8px;
+                        object-fit: cover;
+                        vertical-align: middle;
+                    }
+        }
+
+        @@media (max-width: 768px) {
+            .simple-dropdown {
+                min-width: 250px;
+            }
+        }
+
+        @@media (max-width: 576px) {
+            .simple-dropdown {
+                min-width: 220px;
+            }
+
+                .simple-dropdown .dropdown-item {
+                    padding: 10px 15px;
+                    font-size: 14px;
+                }
+        }
     </style>
 </head>
 <body>
@@ -242,43 +291,81 @@
                             <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
 
-                        <!-- Service Menu with Mega Menu -->
+                        <!-- Service Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white fs-5" href="#">Service</a>
+
+                            <!-- Mega Menu for large screens (>=1024px) -->
                             <div class="dropdown-menu mega-menu">
                                 <div class="mega-menu-content">
                                     <div class="mega-menu-item">
                                         <a href="~/Home/ElectronicsRepairs">
-                                            <img src="~/assets/ElectronicsRepairs1.png" width="200">Electronics Repairs
+                                            <img src="~/assets/electronic_repairs.jpeg" width="150">
+                                           <h4 class="mt-4"> Electronics Repairs</h4>
                                         </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <img src="~/assets/ElectronicsRepairs2.png" width="200">
-                                        <a href="~/Home/AssemblyTest">Assembly & Test</a>
+                                        <a href="~/Home/AssemblyTest">
+                                            <img src="~/assets/assembly_test.jpeg" width="150">
+                                            <h4 class="mt-4">Assembly & Test</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <img src="~/assets/ElectronicsRepairs3.png" width="200">
-                                        <a href="~/Home/ElectronicRefurbish">Electronic Refurbish</a>
+                                        <a href="~/Home/ElectronicRefurbish">
+                                            <img src="~/assets/electronic_refurb.jpeg" width="150">
+                                            <h4 class="mt-4"> Electronic Refurbish</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <img src="~/assets/ElectronicsRepairs4.png" width="200">
-                                        <a href="~/Home/ElectronicPartsSales">Electronics Parts Sales</a>
+                                        <a href="~/Home/ElectronicPartsSales">
+                                            <img src="~/assets/ELECTRONICS_PARTS.jpeg" width="150">
+                                            <h4 class="mt-4">Electronics Parts Sales</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <img src="~/assets/ElectronicsRepairs1.png" width="200">
-                                        <a href="~/Home/ReverseLogistics">Reverse Logistics & Supply Chain</a>
+                                        <a href="~/Home/ReverseLogistics">
+                                            <img src="~/assets/reverse_logistics.jpeg" width="150">
+                                            <h4 class="mt-4">Reverse Logistics & Supply Chain</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <img src="~/assets/ElectronicsRepairs2.png" width="200">
-                                        <a href="~/Home/BespokeSolutions">Bespoke Solutions</a>
+                                        <a href="~/Home/BespokeSolutions">
+                                            <img src="~/assets/Bespoke_Solutions.jpeg" width="150" height="150">
+                                            <h4 class="mt-4">Bespoke Solutions</h4>
+                                        </a>
                                     </div>
                                 </div>
+
+                            </div>
+
+                            <!-- Simple dropdown for small screens (<1024px) -->
+                            <div class="dropdown-menu simple-dropdown">
+                                <a class="dropdown-item" href="~/Home/ElectronicsRepairs">
+                                    Electronics Repairs
+                                </a>
+                                <a class="dropdown-item" href="~/Home/AssemblyTest">
+                                    Assembly & Test
+                                </a>
+                                <a class="dropdown-item" href="~/Home/ElectronicRefurbish">
+                                    Electronic Refurbish
+                                </a>
+                                <a class="dropdown-item" href="~/Home/ElectronicPartsSales">
+                                    Electronics Parts Sales
+                                </a>
+                                <a class="dropdown-item" href="~/Home/ReverseLogistics">
+                                    Reverse Logistics & Supply Chain
+                                </a>
+                                <a class="dropdown-item" href="~/Home/BespokeSolutions">
+                                    Bespoke Solutions
+                                </a>
                             </div>
                         </li>
 
-                        <!-- Markets Menu with Mega Menu (smaller) -->
+                        <!-- Markets Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white fs-5" href="#">Markets</a>
+
+                            <!-- Mega Menu for large screens (>=1024px) -->
                             <div class="dropdown-menu mega-menu small">
                                 <div class="mega-menu-content small">
                                     <div class="mega-menu-item">
@@ -289,8 +376,14 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Simple dropdown for small screens (<1024px) -->
+                            <div class="dropdown-menu simple-dropdown">
+                                <a class="dropdown-item" href="~/Home/Telecom">Telecom</a>
+                                <a class="dropdown-item" href="#">Power & Energy</a>
+                            </div>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
@@ -377,7 +470,7 @@
                 </div>
 
                 <!-- Network Solutions Section -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                <div class="col-lg-3 col-md-6 col-12 mb-4">
                     <h6 class="fw-bold mb-3">About Company</h6>
                     <ul class="list-unstyled effectHover">
                         <li><a href="/Home/WhyUs">About Company</a></li>
@@ -429,6 +522,58 @@
         s0.parentNode.insertBefore(s1,s0);
         })();
     </script>
+
     <!--End of Tawk.to Script-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Only apply click toggle on screens < 1024px
+            function handleDropdownToggle() {
+                if (window.innerWidth < 1024) {
+                    const dropdownLinks = document.querySelectorAll('.dropdown > .nav-link');
+
+                    dropdownLinks.forEach(link => {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+
+                            // Find the simple-dropdown within the same parent dropdown
+                            const parentDropdown = this.parentElement;
+                            const dropdown = parentDropdown.querySelector('.simple-dropdown');
+
+                            // Check if dropdown exists before proceeding
+                            if (dropdown) {
+                                const isOpen = dropdown.classList.contains('show');
+
+                                // Close all other dropdowns
+                                document.querySelectorAll('.simple-dropdown.show').forEach(dd => {
+                                    dd.classList.remove('show');
+                                });
+
+                                // Toggle current dropdown
+                                if (!isOpen) {
+                                    dropdown.classList.add('show');
+                                }
+                            }
+                        });
+                    });
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', function(e) {
+                        if (!e.target.closest('.dropdown')) {
+                            document.querySelectorAll('.simple-dropdown.show').forEach(dd => {
+                                dd.classList.remove('show');
+                            });
+                        }
+                    });
+                }
+            }
+
+            // Initialize and handle window resize
+            handleDropdownToggle();
+            window.addEventListener('resize', function() {
+                // Remove existing event listeners and re-initialize
+                handleDropdownToggle();
+            });
+        });
+    </script>
 </body>
 </html>
