@@ -56,6 +56,18 @@ namespace Cellnfra1.Controllers
         {
             return View();
         }
+        public IActionResult CPEDataNetworks()
+        {
+            return View();
+        }
+        public IActionResult IndustrialElectronics()
+        {
+            return View();
+        }
+        public IActionResult OpticalNetworks()
+        {
+            return View();
+        }
         public IActionResult EWasteManagement()
         {
             return View();

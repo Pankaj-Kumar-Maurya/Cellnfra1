@@ -136,6 +136,21 @@
             background: #7ac943;
             color: #fff;
         }
+
+    
+    #carouselExampleAutoplaying .carousel-item img {
+        height: 150px; /* 👈 set a fixed height for all images */
+        object-fit: contain; /* ensures image is not distorted */
+    }
+
+    /* Keep carousel itself stable */
+    #carouselExampleAutoplaying .carousel-inner {
+        min-height: 180px; /* slightly more than image height */
+        display: flex;
+        align-items: center;
+    }
+
+
     @@media (max-width: 426px) {
         .tab {
             font-size: 13px;            
@@ -153,7 +168,7 @@
             </video>
         </div>
     </section>
-    <section>
+    <section class="mt-2">
         <!-- Tabs -->
         <div class="tabs">
             <div class="tab active" data-target="tab1">What We Do</div>
@@ -370,7 +385,7 @@
                 </div>
                 <!-- Right Text Section -->
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <h1 class="fw-bold">What sets us apart?</h1>
+                    <h1 class="fw-bold mb-4">What sets us apart?</h1>
                     <p>
                         Our extensive team of talented and experienced professionals, including engineers dedicated to continuous
                         improvement and innovation in repair, remanufacturing, refurbishment, reclamation, and reuse technologies.
@@ -402,36 +417,36 @@
                     <!-- First Carousel Item -->
                     <div class="carousel-item active">
                         <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/banner1.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 1">
-                            <img src="~/assets/banner2.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 2">
-                            <img src="~/assets/banner3.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 3">
+                            <img src="~/assets/act net.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 1">
+                            <img src="~/assets/Badge_of_the_Indian_Air_Force.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 2">
+                            <img src="~/assets/bsnl.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 3">
                         </div>
                     </div>
 
                     <!-- Second Carousel Item -->
                     <div class="carousel-item">
                         <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/banner4.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 4">
-                            <img src="~/assets/banner5.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 5">
-                            <img src="~/assets/banner6.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 6">
+                            <img src="~/assets/commtel.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 4">
+                            <img src="~/assets/Exicom_Logo.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 5">
+                            <img src="~/assets/fibocom.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 6">
                         </div>
                     </div>
 
                     <!-- Third Carousel Item -->
                     <div class="carousel-item">
                         <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/banner7.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 7">
-                            <img src="~/assets/banner8.jpg" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 8">
-                            <img src="~/assets/banner9.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 9">
+                            <img src="~/assets/Harman_.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 7">
+                            <img src="~/assets/hytera.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 8">
+                            <img src="~/assets/Jabil-Logo.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 9">
                         </div>
                     </div>
 
                     <!-- Fourth Carousel Item -->
                     <div class="carousel-item">
                         <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/banner10.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 10">
-                            <img src="~/assets/banner11.jpg" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 11">
-                            <img src="~/assets/banner1.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 12">
+                            <img src="~/assets/pngwing.com.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 10">
+                            <img src="~/assets/tata.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 11">
+                            <img src="~/assets/Tejas-Networks-1.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 12">
                         </div>
                     </div>
                 </div>
