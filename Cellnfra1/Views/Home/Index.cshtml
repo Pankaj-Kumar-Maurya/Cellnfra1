@@ -29,8 +29,8 @@
     }
 
     /*   section {
-            margin-bottom: 50px;
-        } */
+                margin-bottom: 50px;
+            } */
     .lead {
         font-size: 16px;
     }
@@ -137,7 +137,7 @@
             color: #fff;
         }
 
-    
+
     #carouselExampleAutoplaying .carousel-item img {
         height: 150px; /* 👈 set a fixed height for all images */
         object-fit: contain; /* ensures image is not distorted */
@@ -153,7 +153,97 @@
 
     @@media (max-width: 426px) {
         .tab {
-            font-size: 13px;            
+            font-size: 13px;
+        }
+    }
+
+    .faq-section {
+        background: #25633d;
+        padding: 60px 0;
+        color: white;
+    }
+
+    .faq-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .accordion-item {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 0;
+    }
+
+        .accordion-item:last-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+    .accordion-button {
+        background: transparent;
+        color: white;
+        border: none;
+        padding: 25px 0;
+        font-size: 1.1rem;
+        font-weight: 400;
+        box-shadow: none;
+        position: relative;
+    }
+
+        .accordion-button:not(.collapsed) {
+            background: transparent;
+            color: white;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border: none;
+        }
+
+        .accordion-button::after {
+            content: '+';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1.5rem;
+            background: none;
+            width: auto;
+            height: auto;
+            transform: none;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            content: '−';
+            transform: none;
+        }
+
+    .accordion-body {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.9);
+        padding: 0 0 25px 0;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .accordion-collapse {
+        border: none;
+    }
+
+    .accordion-button:hover {
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    @@media (max-width: 768px) {
+        .faq-title {
+            font-size: 2rem;
+        }
+
+        .accordion-button {
+            font-size: 1rem;
+            padding: 20px 0;
         }
     }
 
@@ -177,20 +267,20 @@
         </div>
 
         <!-- Tab Content -->
-        <div id="tab1" class="tab-content active">            
+        <div id="tab1" class="tab-content active">
             <p>
                 Cellnfra is a growing provider of Telecom, IT, and Industrial Hardware support services in India, specializing in complex component-level repairs and enabling in-country service for global OEM products.
-                CTS uses advanced tools and efficient repair processes to deliver high-quality results quickly, with real-time customer updates and transparent, affordable pricing.                
+                CTS uses advanced tools and efficient repair processes to deliver high-quality results quickly, with real-time customer updates and transparent, affordable pricing.
             </p>
             <p>
                 We also offer warehousing and logistics support, streamlining shipping and returns. With a strong track record, clients trust us to deliver reliably.
                 Cellnfra Solutions handles thousands of shipments daily, supported by a robust Pan-India logistics network ensuring fast transport between repair centers and customers.
             </p>
-           @*  <a href="#" class="cta">Let’s solve your electronics lifecycle challenges together →</a> *@
+            @*  <a href="#" class="cta">Let’s solve your electronics lifecycle challenges together →</a> *@
         </div>
 
         <div id="tab2" class="tab-content">
-            
+
             <p>
                 Build long-term partnerships and become the most preferred service provider.
             </p>
@@ -199,20 +289,20 @@
             </p>
             <p>
                 Commit to quality through ISO 9001:2015-certified Quality Management Systems.
-            </p>            
+            </p>
         </div>
         <div id="tab3" class="tab-content">
 
-          <div>
+            <div>
                 <p>
                     Hardware repairs
                 </p>
-          </div>
-          <div>
-              <img src="~/assets/banner10.png" />
-          </div>
-           
-            
+            </div>
+            <div>
+                <img src="~/assets/banner10.png" />
+            </div>
+
+
         </div>
 
     </section>
@@ -272,7 +362,7 @@
         </div>
     </section>
 
-   @*  <section>
+    @*  <section>
         <div>
             <p>
                 Cellnfra is in the business of Post sales services, testing, repairing, and distributing electronics products/systems. Cellnfra works with telecom, ISPs, and network Operators, electronics industries in hardware and aftermarket services.
@@ -285,7 +375,7 @@
     <section id="EmpoweringBusinesses" class="mb-5">
         <div class="container">
             <!-- Section Title -->
-            
+
             <h1 class="text-dark text-center mb-4">Empowering Businesses with Expert Aftermarket Solutions</h1>
 
             <!-- Row with Image and Text -->
@@ -397,12 +487,103 @@
                     <p>
                         Other services include optimized supply chain planning and logistics, trade-in and remarketing, and sales.
                     </p>
-                    <button class="btn btn-primary mt-3">Read More</button>
+                    <button class="btn btn-primary mt-3 mb-5">Read More</button>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Frequently asked questions</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="accordion" id="faqAccordion">
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    What kind of hardware do you repair or refurbish?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We handle a wide range of hardware including network equipment, routers, switches, servers, and other enterprise tech systems.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    What services does your company offer?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We specialize in hardware repair and refurbishment solutions for tech-driven companies. Our services include diagnostics, part replacements, system upgrades, preventive maintenance, and complete refurbishing of IT hardware.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Who do you typically work with?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We primarily partner with technology-focused companies that require reliable, long-term hardware servicing - including large corporations like Tata, ACT Netfiber, and other tech-based businesses.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How do you ensure quality in repaired devices?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    All repaired equipment goes through a multi-point inspection process, thorough testing, and quality control checks to ensure they meet industry standards before delivery.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    What's your typical turnaround time?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Turnaround time depends on the complexity of the repair or refurbishment. For most services, we provide an estimated timeline after the initial assessment.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="headingSix">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                    How can we get started?
+                                </button>
+                            </h3>
+                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can reach out to us directly via email or schedule a meeting through our contact number. Visit our Contact page for details.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section style="background-color: #f2f4f6; padding: 40px 0;">
         <div class="container">
