@@ -164,13 +164,13 @@
             }
             /* Smaller mega menu for items with fewer options */
             .mega-menu.small {
-                width: 40vw !important;
+                width: 70vw !important;
                 transform: translateX(-25%) !important;
             }
             /* Auto-adjust grid for fewer items */
             .mega-menu-content.small {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 600px;
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1000px;
             }
             /* Hide simple dropdowns on large screens */
             .simple-dropdown {
@@ -369,21 +369,37 @@
                             <div class="dropdown-menu mega-menu small">
                                 <div class="mega-menu-content small">
                                     <div class="mega-menu-item">
-                                        <a href="~/Home/Telecom">Telecom</a>
+                                        <a href="~/Home/Telecom">
+                                            <img src="~/assets/telecomnav.jpg" width="150" height="150"/>
+                                            <h4>Telecom</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <a href="~/Home/CPEDataNetworks">CPE Data Networks</a>
-                                    </div>
-                                    <div class="mega-menu-item">                                        
-                                        <a href="~/Home/IndustrialElectronics">Industrial Electronics</a>
-                                    </div>
-                                    <div class="mega-menu-item">
-                                        <a href="~/Home/OpticalNetworks">Optical Networks</a>
+                                        <a href="~/Home/CPEDataNetworks">
+                                            <img src="~/assets/cpeData.jpg" width="150" height="150" />
+                                            <h4>CPE Data Networks</h4>
+                                        </a>
                                     </div>
                                     <div class="mega-menu-item">
-                                        <a href="#">Power & Energy</a>
+                                        <a href="~/Home/IndustrialElectronics">
+                                            <img src="~/assets/indestrial.jpg" width="150" height="150" />
+                                            <h4>Industrial Electronics</h4>
+                                        </a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="~/Home/OpticalNetworks">
+                                            <img src="~/assets/optical.jpg" width="150" height="150" />
+                                            <h4>Optical Networks</h4>
+                                        </a>
+                                    </div>
+                                    <div class="mega-menu-item">
+                                        <a href="#">
+                                            <img src="~/assets/pae.jpg" width="150" height="150" />
+                                            <h4>Power & Energy</h4>
+                                        </a>
                                     </div>
                                 </div>
+
                             </div>
 
                             <!-- Simple dropdown for small screens (<1024px) -->
