@@ -147,7 +147,7 @@
                 .mega-menu-item a {
                     text-decoration: none;
                     color: #333;
-                    font-weight: 500;
+                    font-weight: 400;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -265,6 +265,14 @@
         p{
             margin-bottom:0;
         }
+
+        .list-unstyledColor{
+            color:black;
+        }
+
+        .list-unstyledColor li a{
+                color: black;
+        }
     </style>
 </head>
 <body>
@@ -304,42 +312,55 @@
                             <!-- Mega Menu for large screens (>=1024px) -->
                             <div class="dropdown-menu mega-menu">
                                 <div class="mega-menu-content">
-                                    <div class="mega-menu-item">
-                                        <a href="~/Home/ElectronicsRepairs">
-                                            <img src="~/assets/electronic_repairs.jpeg" width="150">
-                                           <h4 class="mt-4"> Electronics Repairs</h4>
+                                    <!-- Electronics Repairs -->
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Home/ElectronicsRepairs" class="text-center d-block">
+                                            <i class="fas fa-tools fa-2x" ></i>
+                                            <h4 class="mt-3">Electronics Repairs</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Assembly & Test -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/AssemblyTest">
-                                            <img src="~/assets/assembly_test.jpeg" width="150">
-                                            <h4 class="mt-4">Assembly & Test</h4>
+                                            <i class="fas fa-cogs fa-2x" ></i>
+                                            <h4 class="mt-3">Assembly & Test</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Electronic Refurbish -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/ElectronicRefurbish">
-                                            <img src="~/assets/electronic_refurb.jpeg" width="150">
-                                            <h4 class="mt-4"> Electronic Refurbish</h4>
+                                            <i class="fas fa-sync-alt fa-2x" ></i>
+                                            <h4 class="mt-3">Electronic Refurbish</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Electronics Parts Sales -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/ElectronicPartsSales">
-                                            <img src="~/assets/ELECTRONICS_PARTS.jpeg" width="150">
-                                            <h4 class="mt-4">Electronics Parts Sales</h4>
+                                            <i class="fas fa-microchip fa-2x" ></i>
+                                            <h4 class="mt-3">Electronics Parts Sales</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Reverse Logistics & Supply Chain -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/ReverseLogistics">
-                                            <img src="~/assets/reverse_logistics.jpeg" width="150">
-                                            <h4 class="mt-4">Reverse Logistics & Supply Chain</h4>
+                                            <i class="fas fa-truck-loading fa-2x" ></i>
+                                            <h4 class="mt-3">Reverse Logistics & Supply Chain</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Bespoke Solutions -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/BespokeSolutions">
-                                            <img src="~/assets/Bespoke_Solutions.jpeg" width="150" height="150">
-                                            <h4 class="mt-4">Bespoke Solutions</h4>
+                                            <i class="fas fa-lightbulb fa-2x" ></i>
+                                            <h4 class="mt-3">Bespoke Solutions</h4>
                                         </a>
                                     </div>
+
+
                                 </div>
 
                             </div>
@@ -374,36 +395,46 @@
                             <!-- Mega Menu for large screens (>=1024px) -->
                             <div class="dropdown-menu mega-menu small">
                                 <div class="mega-menu-content small">
-                                    <div class="mega-menu-item">
+                                    <!-- Telecom -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/Telecom">
-                                            <img src="~/assets/telecomnav.jpg" width="150" height="150"/>
-                                            <h4>Telecom</h4>
+                                            <i class="fas fa-satellite-dish fa-2x" ></i>
+                                            <h4 class="mt-3">Telecom</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- CPE Data Networks -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/CPEDataNetworks">
-                                            <img src="~/assets/cpeData.jpg" width="150" height="150" />
-                                            <h4>CPE Data Networks</h4>
+                                            <i class="fas fa-network-wired fa-2x" ></i>
+                                            <h4 class="mt-3">CPE Data Networks</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Industrial Electronics -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/IndustrialElectronics">
-                                            <img src="~/assets/indestrial.jpg" width="150" height="150" />
-                                            <h4>Industrial Electronics</h4>
+                                            <i class="fas fa-industry fa-2x" ></i>
+                                            <h4 class="mt-3">Industrial Electronics</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Optical Networks -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="~/Home/OpticalNetworks">
-                                            <img src="~/assets/optical.jpg" width="150" height="150" />
-                                            <h4>Optical Networks</h4>
+                                            <i class="fas fa-project-diagram fa-2x" ></i>
+                                            <h4 class="mt-3">Optical Networks</h4>
                                         </a>
                                     </div>
-                                    <div class="mega-menu-item">
+
+                                    <!-- Power & Energy -->
+                                    <div class="mega-menu-item text-center">
                                         <a href="#">
-                                            <img src="~/assets/pae.jpg" width="150" height="150" />
-                                            <h4>Power & Energy</h4>
+                                            <i class="fas fa-bolt fa-2x" ></i>
+                                            <h4 class="mt-3">Power & Energy</h4>
                                         </a>
                                     </div>
+
                                 </div>
 
                             </div>
@@ -466,24 +497,24 @@
             </div>
         </div>
     </section>
-    <section style="background-color: #1a1f36; color: #ffffff; padding: 40px 0;">
+    <section style="background-color: #92cc37; color: black; padding: 40px 0;">
         <div class="container">
             <div class="row">
                 <!-- Address Section -->
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <h5 class="fw-bold mb-3">Celln<span style="color: #85ad46;">fra</span></h5>
+                    <h5 class="fw-bold mb-3">Celln<span style="color: black;">fra</span></h5>
                     <p>#4/5, 1st Floor, Maruti Industrial Park</p>                   
                     <p>Whitefield Road, Next to Hotel Zuri Rajapalya</p>                    
                     <p>Hoody Village, Bengaluru, 560048 Karnataka</p>                   
                     <h6 class="fw-bold mt-4">For Sales</h6>
-                    <p><a href="tel:+91 93537 62223" style="color: #85ad46; text-decoration: none;">+91 93537 62223</a></p>
-                    <p><a href="mailto:sales@tempestns.com" style="color: #85ad46; text-decoration: none;">info@cellnfra.com</a></p>
+                    <p><a href="tel:+91 93537 62223" style="color: black; text-decoration: none;">+91 93537 62223</a></p>
+                    <p><a href="mailto:sales@tempestns.com" style="color: black; text-decoration: none;">info@cellnfra.com</a></p>
                 </div>
 
                 <!-- Select Highlights Section -->
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                     <h6 class="fw-bold mb-3">Markets</h6>
-                    <ul class="list-unstyled effectHover">
+                    <ul class="list-unstyledColor effectHover">
                         <li><a href="~/Home/Telecom">Telecom</a></li>
                         <li><a href="~/Home/OpticalNetworks">Optical Networks</a></li>
                         <li><a href="~/Home/IndustrialElectronics">Industrial Electronics</a></li>
@@ -498,7 +529,7 @@
                 <!-- Network Solutions Section -->
                 <div class="col-lg-3 col-md-6 col-12 mb-4">
                     <h6 class="fw-bold mb-3">About Company</h6>
-                    <ul class="list-unstyled effectHover">
+                    <ul class="list-unstyledColor effectHover">
                         <li><a href="/Home/WhyUs">About Company</a></li>
                         <li><a href="/Home/Contact">Contact Us</a></li>
                         <li><a href="/">Privacy policy</a></li>
@@ -510,7 +541,7 @@
                 <!-- Industries Section -->
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <h6 class="fw-bold mb-3">Life Cycles Services</h6>
-                    <ul class="list-unstyled effectHover">
+                    <ul class="list-unstyledColor effectHover">
                         <li><a href="~/Home/ElectronicsRepairs">Electronics Repairs</a></li>
                         <li><a href="~/Home/AssemblyTest">Assembly & Retrofitting</a></li>
                         <li><a href="~/Home/ElectronicRefurbish">Refurbished Electronics</a></li>
