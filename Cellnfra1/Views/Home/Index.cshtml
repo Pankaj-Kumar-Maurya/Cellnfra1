@@ -4,32 +4,64 @@
 <style>
     #hero {
         position: relative;
-        font-family: "Gotham", Arial;
-        background-color: #121b2c;
-        background-image: url('/assets/home-banner-left-graphic-02.svg'), url('/assets/home-banner-right-graphic.svg');
-        background-repeat: no-repeat, no-repeat;
-        background-position: left bottom, right bottom;
-        background-size: auto, auto;
-        overflow-x: hidden;
-        /* Prevent content from being hidden under navbar */
-        z-index: 1;
+        width: 100%;
+        height: 100vh; /* full screen height */
+        overflow: hidden;
     }
 
         #hero video {
-            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            height: 100%;
+            object-fit: cover; /* ensures video fills hero nicely */
             z-index: 0;
         }
 
-    h1 {       
+    .overlay-text {
+        margin-top:80px;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
+        padding: 20px;
+    }
+
+        .overlay-text h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .overlay-text h6 {
+            font-weight:bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .overlay-text button {
+            background-color: #a6d850; 
+            color: #121b2c;
+            font-size: 1.1rem;
+            padding: 10px 25px;
+            border-radius: 30px;
+        }
+
+
+    h1 {
         font-weight: bold;
     }
 
     /*   section {
-                margin-bottom: 50px;
-            } */
+                        margin-bottom: 50px;
+                    } */
     .lead {
         font-size: 16px;
     }
@@ -53,9 +85,9 @@
     }
 
     /* p {
-        font-size: 14px;
-        font-weight: bold;
-    } */
+                font-size: 14px;
+                font-weight: bold;
+            } */
 
     /* Top Navigation */
     .tabs {
@@ -157,7 +189,7 @@
     }
 
     .faq-section {
-       /*  background: #25633d; */
+        /*  background: #25633d; */
         /* background: #92cc37; */
         background: #c6c4c4;
         padding: 60px 0;
@@ -165,7 +197,6 @@
     }
 
     .faq-title {
-       
         font-size: 2.5rem;
         font-weight: bold;
         text-align: center;
@@ -173,7 +204,6 @@
     }
 
     .accordion-item {
-        
         background: transparent;
         border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -255,13 +285,18 @@
 </style>
 <div class="container-fluid p-0">
     <section id="hero">
-        <div class="container-fluid p-0">
-            <video autoplay muted loop playsinline class="w-100">
-                <source src="~/assets/cellVideo1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <video autoplay muted loop playsinline>
+            <source src="~/assets/cellnfraVideo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-text">
+            <h1>Giving Electronics a</h1>
+            <h1>Longer, Smart Life</h1>
+            <h6>Giving your electronics a second life with repair, refurbishment, and recycling.</h6>
+            <button class="btn btn-success">Know Us Better</button>
         </div>
     </section>
+
     <section class="mt-2" style="height:400px">
         <!-- Tabs -->
         <div class="tabs">
