@@ -19,6 +19,66 @@ html {
 
 body {
     margin-bottom: 60px;
-    font-family: 'Merriweather', serif;
-   /* font-weight: 400;*/
+    font-family: "Bai Jamjuree", Helvetica, Arial, sans-serif;
+    /* font-weight: 400;*/
 }
+
+.stats-section {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.stats-container {
+    width: 100%;
+    max-width: 1300px;
+    background: #f4f6fa;
+    border-radius: 30px;
+    display: flex;
+    padding: 40px;
+    align-items: center;
+    gap: 40px;
+}
+
+.stats-left {
+    width: 30%;
+}
+
+    .stats-left h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #0d1b2a;
+    }
+
+.stats-right {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.stat-card {
+    flex: 1;
+    padding: 25px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #e9f2ff, #dff2ff, #e3f1ff);
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+    .stat-card h1 {
+        font-size: 32px;
+        margin-bottom: 5px;
+        font-weight: 700;
+        color: #0d1b2a;
+    }
+
+        .stat-card h1 span {
+            color: #0059ff;
+        }
+
+    .stat-card p {
+        margin: 0;
+        font-size: 14px;
+        color: #0d1b2a;
+    }

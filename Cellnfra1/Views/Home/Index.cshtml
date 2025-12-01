@@ -5,63 +5,82 @@
     #hero {
         position: relative;
         width: 100%;
-        height: 70vh; /* full screen height */
+        height: 70vh;
         overflow: hidden;
     }
 
-        #hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        #hero .carousel,
+        #hero .carousel-inner,
+        #hero .carousel-item {
             height: 100%;
-            object-fit: cover; /* ensures video fills hero nicely */
-            z-index: 0;
         }
 
-    .overlay-text {
-        margin-top:80px;
-        position: relative;
-        z-index: 1;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;        
-        text-align: center;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.3); /* optional dark overlay */
-        padding: 20px;
+            #hero .carousel-item img,
+            #hero .carousel-item video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+    /* Carousel controls positioning */
+    .carousel-control-prev,
+    .carousel-control-next {
+        z-index: 2;
     }
 
-        .overlay-text h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
+    /* Responsive adjustments */
+    @@media (max-width: 768px) {
+        #hero {
+            height: 60vh;
         }
+    }
 
-        .overlay-text h6 {
-            font-weight:bold;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: #ddd;
+    @@media (max-width: 426px) {
+        #hero {
+            height: 50vh;
         }
+    }
 
-        .overlay-text button {
-            background-color: #a6d850; 
-            color: #121b2c;
-            font-size: 1.1rem;
-            padding: 10px 25px;
-            border-radius: 30px;
-        }
+    /* .overlay-text {
+                margin-top:80px;
+                position: relative;
+                z-index: 1;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.3);
+                padding: 20px;
+            }
+
+                .overlay-text h1 {
+                    font-size: 4.5rem;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+
+                .overlay-text h6 {
+                    font-weight:bold;
+                    font-size: 1.5rem;
+                    margin-bottom: 20px;
+                    color: #ddd;
+                }
+
+                .overlay-text button {
+                    background-color: #a6d850;
+                    color: #121b2c;
+                    font-size: 1.1rem;
+                    padding: 10px 25px;
+                    border-radius: 30px;
+                } */
 
 
     h1 {
         font-weight: bold;
     }
 
-    /*   section {
-                        margin-bottom: 50px;
-                    } */
     .lead {
         font-size: 16px;
     }
@@ -85,9 +104,9 @@
     }
 
     /* p {
-                font-size: 14px;
-                font-weight: bold;
-            } */
+                        font-size: 14px;
+                        font-weight: bold;
+                    } */
 
     /* Top Navigation */
     .tabs {
@@ -285,17 +304,43 @@
 </style>
 <div class="container-fluid p-0">
     <section id="hero">
-        <video autoplay muted loop playsinline>
-            <source src="~/assets/cellnfraVideo1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="overlay-text">
-            <h1>Giving Electronics a</h1>
-            <h1>Longer, Smart Life</h1>
-            <h6>Giving your electronics a second life with repair, refurbishment, and recycling.</h6>
-            @* <button class="btn btn-success">Know Us Better</button> *@
+        <div id="carouselExampleControls"
+             class="carousel slide"
+             data-bs-touch="false"
+             data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Slide: Image -->
+                <div class="carousel-item active">
+                    <img src="~/assets/CellnfraNewBanner.png"
+                         class="d-block w-100"
+                         alt="Hero Image" />
+                </div>
+
+                <!-- Second Slide: Video -->
+                <div class="carousel-item">
+                    <video autoplay muted loop playsinline class="d-block w-100">
+                        <source src="~/assets/cellnfraHerovideo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
     </section>
+
 
     <section class="mt-2" style="height:400px">
         <!-- Tabs -->
@@ -349,71 +394,35 @@
 
     </section>
 
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stats-left">
+                <h2>100+ industry leaders trust Cellnfra</h2>
+            </div>
 
-    <section style="background-color: #f2f4f6; padding: 40px 0;" class="mb-5">
-        <div class="container">
-            <div class="row text-center">
-                <!-- First Item -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div>
-                        <div class="rounded-circle mx-auto d-flex justify-content-center align-items-center"
-                             style="width: 80px; height: 80px; background-color:#121b2c;">
-                            <i class=" fas fa-microchip" style="font-size: 24px; color:#01c7f5;"></i>
-                        </div>
-                        <p class="mt-3 mb-0">Units Processed</p>
-                        <p>5200 </p>
-                    </div>
+            <div class="stats-right">
+                <div class="stat-card">
+                    <h1>5200<span>+</span></h1>
+                    <p>Units Processed</p>
                 </div>
 
-                <!-- Second Item -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div>
-                        <div class="rounded-circle bg-dark mx-auto d-flex justify-content-center align-items-center"
-                             style="width: 80px; height: 80px; background-color:#121b2c;">
-                            <i class="fas fa-sitemap" style="font-size: 24px; color:#01c7f5;"></i>
-                        </div>
-                        <p class="mt-3 mb-0">Types of Products</p>
-                        <p>100 </p>
-                    </div>
+                <div class="stat-card">
+                    <h1>100<span>+</span></h1>
+                    <p>Types of Products</p>
                 </div>
 
-                <!-- Third Item -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div>
-                        <div class="rounded-circle bg-dark mx-auto d-flex justify-content-center align-items-center"
-                             style="width: 80px; height: 80px; background-color:#121b2c;">
-                            <i class="fas fa-user" style="font-size: 24px; color:#01c7f5;"></i>
-                        </div>
-                        <p class="mt-3 mb-0">Customers</p>
-                        <p>200 </p>
-                    </div>
+                <div class="stat-card">
+                    <h1>200<span>+</span></h1>
+                    <p>Customers</p>
                 </div>
 
-                <!-- Fourth Item -->
-                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <div>
-                        <div class="rounded-circle bg-dark mx-auto d-flex justify-content-center align-items-center"
-                             style="width: 80px; height: 80px; background-color:#121b2c;">
-                            <i class="fas fa-people-group" style="font-size: 24px; color:#01c7f5;"></i>
-                        </div>
-                        <p class="mt-3 mb-0">Team</p>
-                        <p>98 </p>
-                    </div>
+                <div class="stat-card">
+                    <h1>98<span>+</span></h1>
+                    <p>Team</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    @*  <section>
-        <div>
-            <p>
-                Cellnfra is in the business of Post sales services, testing, repairing, and distributing electronics products/systems. Cellnfra works with telecom, ISPs, and network Operators, electronics industries in hardware and aftermarket services.
-                At Cellnfra, we are Experts in troubleshooting, repairing, and extending the lifespan of all types of Telecom, IT, CPE and Industrial electronics.
-            </p>
-        </div>
-    </section> *@
-
-
+    </section>    
     <section id="EmpoweringBusinesses" class="mb-5">
         <div class="container">
             <!-- Section Title -->
@@ -627,55 +636,97 @@
         </div>
     </section>
 
-    <section style="background-color: #f2f4f6; padding: 40px 0;">
-        <div class="container">
-            <!-- Heading -->
-            <div class="text-center mb-5">
-                <h1 class="fw-bold">Trusted By 100+ Clients</h1>
-            </div>
 
-            <!-- Carousel -->
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="false">
-                <div class="carousel-inner">
-                    <!-- First Carousel Item -->
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/act net.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 1">
-                            <img src="~/assets/Badge_of_the_Indian_Air_Force.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 2">
-                            <img src="~/assets/bsnl.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 3">
-                        </div>
-                    </div>
 
-                    <!-- Second Carousel Item -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/commtel.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 4">
-                            <img src="~/assets/Exicom_Logo.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 5">
-                            <img src="~/assets/fibocom.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 6">
-                        </div>
-                    </div>
 
-                    <!-- Third Carousel Item -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/Harman_.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 7">
-                            <img src="~/assets/hytera.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 8">
-                            <img src="~/assets/Jabil-Logo.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 9">
-                        </div>
-                    </div>
+    <section class="py-5 mt-5">
+        <style>
+            .client-logo {
+                max-width: 240px; /* Control logo width */
+                max-height: 120px; /* Control logo height */
+                object-fit: contain; /* Prevent stretching */
+                transition: 0.3s ease;
+            }
 
-                    <!-- Fourth Carousel Item -->
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-around align-items-center">
-                            <img src="~/assets/pngwing.com.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 10">
-                            <img src="~/assets/tata.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 11">
-                            <img src="~/assets/Tejas-Networks-1.png" class="d-block rounded img-fluid" style="max-width: 150px;" alt="Client 12">
-                        </div>
-                    </div>
+                .client-logo:hover {
+                    transform: scale(1.08); /* Nice hover effect */
+                }
+        </style>
+        <div class="container text-center">
+
+            <h2 class="fw-bold mb-3" style="font-size: 2.8rem; color:#0a2850;">
+                Major Clientele
+            </h2>
+
+            <p class="text-muted mb-5" style="max-width: 650px; margin: 0 auto;">
+                Strength grows where collaboration thrives — together, we shape the future.
+            </p>
+
+            <div class="row justify-content-center">
+
+                <!-- 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/act net.png" class="img-fluid client-logo" alt="act">
                 </div>
+
+                <!-- 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Badge_of_the_Indian_Air_Force.png" class="img-fluid client-logo" alt="AirForce">
+                </div>
+
+                <!-- 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/bsnl.png" class="img-fluid client-logo" alt="BSNL">
+                </div>
+
+                <!-- 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/commtel.png" class="img-fluid client-logo" alt="Commtel">
+                </div>
+
+                <!-- 5 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Exicom_Logo.png" class="img-fluid client-logo" alt="Exicom">
+                </div>
+
+                <!-- 6 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Fibocom1.png" class="img-fluid client-logo" alt="fibocom">
+                </div>
+
+                <!-- 7 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Harman_.png" class="img-fluid client-logo" alt="Harman">
+                </div>
+
+                <!-- 8 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/hytera.png" class="img-fluid client-logo" alt="Hytera">
+                </div>
+
+                <!-- 9 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Jabil-Logo.png" class="img-fluid client-logo" alt="Jabil">
+                </div>
+
+                <!-- 10 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/pngwing.com.png" class="img-fluid client-logo" alt="PNGWing">
+                </div>
+
+                <!-- 11 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/tata.png" class="img-fluid client-logo" alt="TATA">
+                </div>
+
+                <!-- 12 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+                    <img src="~/assets/Tejas-Networks-1.png" class="img-fluid client-logo" alt="TEJAS">
+                </div>
+
             </div>
         </div>
-    </section>
+    </section>    
 
 
 </div>
