@@ -46,7 +46,10 @@ namespace Cellnfra1.Controllers
         {
             return View();
         }
-
+        public IActionResult Products()
+        {
+            return View();
+        }
 
         public IActionResult Telecom()
         {
