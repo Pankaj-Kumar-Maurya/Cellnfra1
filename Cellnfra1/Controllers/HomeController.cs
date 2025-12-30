@@ -50,6 +50,10 @@ namespace Cellnfra1.Controllers
         {
             return View();
         }
+        public IActionResult Brands()
+        {
+            return View();
+        }
 
         public IActionResult Telecom()
         {
