@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model IEnumerable<Cellnfra1.Models.tbl_PostContent>
 <style>
     #hero {
         position: relative;
@@ -39,7 +40,7 @@
         #hero {
             height: 50vh;
         }
-    }    
+    }
 
 
     h1 {
@@ -69,9 +70,9 @@
     }
 
     /* p {
-                        font-size: 14px;
-                        font-weight: bold;
-                    } */
+                            font-size: 14px;
+                            font-weight: bold;
+                        } */
 
     /* Top Navigation */
     .tabs {
@@ -264,7 +265,7 @@
             padding: 20px 0;
         }
     }
-    
+
     /* #f2f4f6 */
 </style>
 <div class="container-fluid p-0">
@@ -317,20 +318,41 @@
 
         <!-- Tab Content -->
         <div id="tab1" class="tab-content active">
-            <p>
+            @{
+                var WhatWeDoContent = Model.FirstOrDefault(x => x.DivSlug == "WhatWeDo");
+            }
+            @if (WhatWeDoContent != null)
+            {
+                @Html.Raw(WhatWeDoContent.Content)
+            }
+            else
+            {
+                <p>Please Add Some Content.</p>
+            }
+            @* <p>
                 Cellnfra is a growing provider of Telecom, IT, and Industrial Hardware support services in India, specializing in complex component-level repairs and enabling in-country service for global OEM products.
                 CTS uses advanced tools and efficient repair processes to deliver high-quality results quickly, with real-time customer updates and transparent, affordable pricing.
             </p>
             <p>
                 We also offer warehousing and logistics support, streamlining shipping and returns. With a strong track record, clients trust us to deliver reliably.
                 Cellnfra Solutions handles thousands of shipments daily, supported by a robust Pan-India logistics network ensuring fast transport between repair centers and customers.
-            </p>
+            </p> *@
             @*  <a href="#" class="cta">Let’s solve your electronics lifecycle challenges together →</a> *@
         </div>
 
         <div id="tab2" class="tab-content">
-
-            <p>
+            @{
+                var OurStrengthContent = Model.Where(x => x.DivSlug == "OurStrength").OrderByDescending(x=>x.CreatedAt).FirstOrDefault();
+            }
+            @if (OurStrengthContent != null)
+            {
+                @Html.Raw(OurStrengthContent.Content)
+            }
+            else
+            {
+                <p>Please Add Some Content.</p>
+            }
+            @*  <p>
                 Build long-term partnerships and become the most preferred service provider.
             </p>
             <p>
@@ -338,23 +360,32 @@
             </p>
             <p>
                 Commit to quality through ISO 9001:2015-certified Quality Management Systems.
-            </p>
+            </p> *@
         </div>
         <div id="tab3" class="tab-content">
 
             <div>
-                <p>Hardware repair services focus on restoring the performance and reliability of your systems.</p>
+                @{
+                    var HardwareRepairsContent = Model.FirstOrDefault(x => x.DivSlug == "HardwareRepairs");
+                }
+                @if (HardwareRepairsContent != null)
+                {
+                    @Html.Raw(HardwareRepairsContent.Content)
+                }
+                else
+                {
+                    <p>Please Add Some Content.</p>
+                }
+                @*  <p>Hardware repair services focus on restoring the performance and reliability of your systems.</p>
 
                 <p>Professional support helps identify issues, provide effective solutions, and ensure long-term stability.</p>
 
                 <p>Regular maintenance and timely repairs extend equipment lifespan, prevent unexpected failures, and reduce costs, giving you confidence that your technology will continue running efficiently.</p>
-
+               *@
             </div>
             @* <div>
                 <img src="~/assets/banner10.png" />
             </div> *@
-
-
         </div>
 
     </section>
@@ -387,7 +418,7 @@
                 </div>
             </div>
         </div>
-    </section>    
+    </section>
     <section id="EmpoweringBusinesses" class="mb-5">
         <div class="container">
             <!-- Section Title -->
@@ -402,9 +433,17 @@
                 </div>
                 <!-- Text Column -->
                 <div class="col-lg-6 col-sm-12">
-                    <p class="text-dark">
-                        Cellnfra is into aftermarket services and solutions that deliver value to enable our customers to achieve their financial and sustainability objectives. Cellnfra was formed with a group of professionals having more than 120+ man-years of combined deep domain experience and knowledge in the fields of Post sales services, supply chain management, engineering, technology, services, repair, and refurbishment serving a wide range of electronic product markets. We offer industry-leading methods and processes to help our customers work faster, leaner, and more efficiently. Our customers present us with a problem and we help solve it quickly. One of our core competencies is understanding customer requirements.
-                    </p>
+                    @{
+                        var EmpoweringBusinessesContent = Model.Where(x => x.DivSlug == "EmpoweringBusinesses").OrderByDescending(x => x.CreatedAt).FirstOrDefault();
+                    }
+                    @if (EmpoweringBusinessesContent != null)
+                    {
+                        @Html.Raw(EmpoweringBusinessesContent.Content)
+                    }
+                    else
+                    {
+                        <p>Please Add Some Content.</p>
+                    }
                 </div>
             </div>
         </div>
@@ -691,7 +730,7 @@
 
             </div>
         </div>
-    </section>    
+    </section>
 
 
 </div>

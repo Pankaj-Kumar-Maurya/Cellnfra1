@@ -7,15 +7,17 @@ namespace Cellnfra1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DatabaseContext _context;
+        public HomeController(ILogger<HomeController> logger, DatabaseContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var HomePageContent = _context.tbl_PostContents.Where(x => x.Slug == "Home").ToList();
+            return View(HomePageContent);
         }
 
         public IActionResult WhyUs()
