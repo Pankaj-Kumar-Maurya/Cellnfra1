@@ -1,14 +1,16 @@
 using Cellnfra1.Models;
 using Microsoft.EntityFrameworkCore;
+using static Cellnfra1.Controllers.HomeController;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("EmailSettings"));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<DatabaseContext>(options =>
     options.UseSqlServer(connectionString));
-builder.Services.AddSession(options =>options.IdleTimeout = TimeSpan.FromMinutes(30));
+builder.Services.AddSession(options => options.IdleTimeout = TimeSpan.FromMinutes(30));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

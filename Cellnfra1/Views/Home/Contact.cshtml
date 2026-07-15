@@ -1,4 +1,7 @@
-﻿<style>
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<style>
     h2 {       
         font-weight: bold;
     }
@@ -14,35 +17,64 @@
 
 </style>
 <div class="container-fluid py-5" style="padding-top: 4rem !important;">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close">
+            </button>
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Close">
+            </button>
+        </div>
+    }
     <section id="contact" class="mb-5">
         <div class="container">
             <div class="row gy-4">
                 <!-- Form Section -->
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <h2 class="text-center mb-5">Get In Touch</h2>
-                    <form class="row g-3">
+                    <form class="row g-3" asp-action="Contact" asp-controller="Home" method="post">
                         <div class="col-md-6">
-                            <label for="inputName4" class="form-label">Name</label>
-                            <input type="text" class="form-control w-100" id="inputName">
+                            <label for="inputName" class="form-label">Name</label>
+                            <input type="text" class="form-control w-100" id="inputName" name="inputName">
                         </div>
                         <div class="col-md-6">
-                            <label for="inputPhone4" class="form-label">Phone</label>
-                            <input type="text" class="form-control w-100" id="inputPhone4">
+                            <label for="inputPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control w-100" id="inputPhone" name="inputPhone">
                         </div>
                         <div class="col-md-6">
                             <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control w-100" id="inputEmail" placeholder="example@gmail.com">
+                            <input type="email" class="form-control w-100" id="inputEmail" name="inputEmail" placeholder="Please enter your email.">
                         </div>
                         <div class="col-md-6">
                             <label for="inputService" class="form-label">Service</label>
-                            <select id="inputService" class="form-select w-100">
+                            <select id="inputService" class="form-select w-100" name="inputService">
                                 <option selected>Choose...</option>
                                 <option>Electronics Repairs</option>
                                 <option>Telecom</option>
+                                <option>Assembly & Retrofitting</option>
+                                <option>Refurbished Electronics</option>
+                                <option>Electronic Parts Sales</option>
+                                <option>Reverse logistics and supply chain</option>
+                                <option>Bespoke Solutions</option>
+                      
                             </select>
                         </div>
                         <div class="col-12">
-                            <textarea class="form-control w-100" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+                            <textarea class="form-control w-100" id="Textareaid" name="inputMessage" rows="3" placeholder="Your message"></textarea>
                         </div>
                         <div class="col-12 text-center">
                             <button type="submit" class="btn btnColor w-50">Submit</button>
