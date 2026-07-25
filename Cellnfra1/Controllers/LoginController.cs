@@ -18,7 +18,7 @@ namespace Cellnfra1.Controllers
         [HttpPost]
         public IActionResult LoginPage(string Email, string Password)
         {
-            var user = _context.tbl_Accounts.FirstOrDefault(u => u.Email == Email && u.Password == Password);
+            var user = _context.tbl_CMSAccounts.FirstOrDefault(u => u.Email == Email && u.Password == Password);
             if (user != null && user.Role == "Editor" && user.IsActive == true)
             {
                 HttpContext.Session.SetString("UserID", user.AccountID.ToString());

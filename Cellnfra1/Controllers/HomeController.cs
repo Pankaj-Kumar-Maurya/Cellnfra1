@@ -23,7 +23,7 @@ namespace Cellnfra1.Controllers
 
         public IActionResult Index()
         {
-            var HomePageContent = _context.tbl_PostContents.Where(x => x.Slug == "Home").ToList();
+            var HomePageContent = _context.tbl_CMSPostContents.Where(x => x.Slug == "Home").ToList();
             return View(HomePageContent);
         }
 

@@ -1,6 +1,5 @@
 ﻿using Cellnfra1.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Hosting;
 using System.Text.RegularExpressions;
 
 namespace Cellnfra1.Controllers
@@ -14,12 +13,12 @@ namespace Cellnfra1.Controllers
         }
         [HttpGet]
         public IActionResult CustomCMSPage()
-        {            
-            if(HttpContext.Session.GetString("UserID") == null || HttpContext.Session.GetString("UserRole") != "Editor")
+        {
+            if (HttpContext.Session.GetString("UserID") == null || HttpContext.Session.GetString("UserRole") != "Editor")
             {
                 return RedirectToAction("Index", "Home");
             }
-            return View(_context.tbl_PostContents.ToList());
+            return View(_context.tbl_CMSPostContents.ToList());
         }
         public IActionResult Create()
         {
@@ -33,7 +32,7 @@ namespace Cellnfra1.Controllers
             if (ModelState.IsValid)
             {
 
-                _context.tbl_PostContents.Add(post);
+                _context.tbl_CMSPostContents.Add(post);
                 _context.SaveChanges();
                 return RedirectToAction("CustomCMSPage");
             }
@@ -43,7 +42,7 @@ namespace Cellnfra1.Controllers
 
         public IActionResult Edit(int id)
         {
-            var post = _context.tbl_PostContents.FirstOrDefault(x => x.Id == id);
+            var post = _context.tbl_CMSPostContents.FirstOrDefault(x => x.Id == id);
             if (post == null)
                 return NotFound();
 
@@ -58,7 +57,7 @@ namespace Cellnfra1.Controllers
                 return View(post);
             }
 
-            var existing = _context.tbl_PostContents.FirstOrDefault(x => x.Id == post.Id);
+            var existing = _context.tbl_CMSPostContents.FirstOrDefault(x => x.Id == post.Id);
             if (existing == null)
                 return NotFound();
 
@@ -79,7 +78,7 @@ namespace Cellnfra1.Controllers
         //}
         public IActionResult Delete(int id)
         {
-            var post = _context.tbl_PostContents.FirstOrDefault(x => x.Id == id);
+            var post = _context.tbl_CMSPostContents.FirstOrDefault(x => x.Id == id);
 
             if (post == null)
                 return NotFound();
@@ -109,7 +108,7 @@ namespace Cellnfra1.Controllers
             }
 
             // 2. Remove post from database
-            _context.tbl_PostContents.Remove(post);
+            _context.tbl_CMSPostContents.Remove(post);
             _context.SaveChanges();
 
             return RedirectToAction("CustomCMSPage");
