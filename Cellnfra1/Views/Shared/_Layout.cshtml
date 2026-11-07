@@ -138,14 +138,7 @@
                 backdrop-filter: blur(10px);
                 -webkit-backdrop-filter: blur(10px);
                 border: 1px solid rgba(255, 255, 255, 0.3);
-            }
-
-                /* .mega-menu-item:hover {
-                    background: rgba(255, 255, 255, 0.35);
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-                    border: 1px solid rgba(255, 255, 255, 0.4);
-                } */
+            }                
 
                 .mega-menu-item a {
                     text-decoration: none;
@@ -282,10 +275,7 @@
     <div class="blue-ribbon">
         <div class="left">
         </div>
-        <div class="right">
-            <a href="https://www.linkedin.com" target="_blank">
-                <i class="fab fa-linkedin-in fa-2x"></i>
-            </a>
+        <div class="right">            
             <span><img src="~/assets/world.png" width="30" /></span>
             <a href="tel:+91 93537 62223"><span>+91 93537 62223</span></a>
             <a href="mailto:info@cellnfra.com">info@cellnfra.com</a>
@@ -318,7 +308,7 @@
                                     <!-- Electronics Repairs -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/ElectronicsRepairs" class="text-center d-block">
-                                            <i class="fas fa-tools fa-2x" ></i>
+                                            @* <i class="fas fa-tools fa-2x" ></i> *@
                                             <h6 class="mt-3">Electronics Repairs</h6>
                                         </a>
                                     </div>
@@ -326,7 +316,7 @@
                                     <!-- Assembly & Test -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/AssemblyTest">
-                                            <i class="fas fa-cogs fa-2x" ></i>
+                                            @* <i class="fas fa-cogs fa-2x" ></i> *@
                                             <h6 class="mt-3">Assembly & Test</h6>
                                         </a>
                                     </div>
@@ -334,7 +324,7 @@
                                     <!-- Electronic Refurbish -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/ElectronicRefurbish">
-                                            <i class="fas fa-sync-alt fa-2x" ></i>
+                                            @* <i class="fas fa-sync-alt fa-2x" ></i> *@
                                             <h6 class="mt-3">Electronic Refurbish</h6>
                                         </a>
                                     </div>
@@ -342,7 +332,7 @@
                                     <!-- Electronics Parts Sales -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/ElectronicPartsSales">
-                                            <i class="fas fa-microchip fa-2x" ></i>
+                                            @* <i class="fas fa-microchip fa-2x" ></i> *@
                                             <h6 class="mt-3">Electronic Parts Sales</h6>
                                         </a>
                                     </div>
@@ -350,7 +340,7 @@
                                     <!-- Reverse Logistics & Supply Chain -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/ReverseLogistics">
-                                            <i class="fas fa-truck-loading fa-2x" ></i>
+                                            @* <i class="fas fa-truck-loading fa-2x" ></i> *@
                                             <h6 class="mt-3">Reverse Logistics & Supply Chain</h6>
                                         </a>
                                     </div>
@@ -358,7 +348,7 @@
                                     <!-- Bespoke Solutions -->
                                     <div class="mega-menu-item text-center">
                                         <a href="~/Home/BespokeSolutions">
-                                            <i class="fas fa-lightbulb fa-2x" ></i>
+                                            @* <i class="fas fa-lightbulb fa-2x" ></i> *@
                                             <h6 class="mt-3">Bespoke Solutions</h6>
                                         </a>
                                     </div>
@@ -390,61 +380,172 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Products">Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Brands">Brands</a>
-                        </li>
-                        <!-- Markets Menu -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white fs-5" href="#">Markets</a>
-
+                            <a class="nav-link dropdown-toggle text-white fs-5" href="#">Products</a>
                             <!-- Mega Menu for large screens (>=1024px) -->
-                            <div class="dropdown-menu mega-menu small">
-                                <div class="mega-menu-content small">
-                                    <!-- Telecom -->
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-content">
+                                 
                                     <div class="mega-menu-item text-center">
-                                        <a href="~/Home/Telecom">
-                                            <i class="fas fa-satellite-dish fa-2x" ></i>
-                                            <h6 class="mt-3">Telecom</h6>
+                                        <a href="~/Product/ACDCAdapters" class="text-center d-block">
+                                            @* <i class="fas fa-tools fa-2x"></i> *@
+                                            <h6 class="mt-3">AC-DC Adapters (BIS Certified)</h6>
                                         </a>
                                     </div>
 
-                                    <!-- CPE Data Networks -->
+                                    
                                     <div class="mega-menu-item text-center">
-                                        <a href="~/Home/CPEDataNetworks">
-                                            <i class="fas fa-network-wired fa-2x" ></i>
-                                            <h6 class="mt-3">CPE Data Networks</h6>
+                                        <a href="~/Product/POEPlusModules" class="text-center d-block">
+                                            @* <i class="fas fa-cogs fa-2x"></i> *@
+                                            <h6 class="mt-3">POE+ Modules</h6>
                                         </a>
                                     </div>
 
-                                    <!-- Industrial Electronics -->
+                             
                                     <div class="mega-menu-item text-center">
-                                        <a href="~/Home/IndustrialElectronics">
-                                            <i class="fas fa-industry fa-2x" ></i>
-                                            <h6 class="mt-3">Industrial Electronics</h6>
+                                        <a href="~/Product/ReversePOE" class="text-center d-block">
+                                            @* <i class="fas fa-sync-alt fa-2x"></i> *@
+                                            <h6 class="mt-3">Reverse POE</h6>
                                         </a>
                                     </div>
 
-                                    <!-- Optical Networks -->
+                                    
                                     <div class="mega-menu-item text-center">
-                                        <a href="~/Home/OpticalNetworks">
-                                            <i class="fas fa-project-diagram fa-2x" ></i>
-                                            <h6 class="mt-3">Optical Networks</h6>
+                                        <a href="~/Product/DCUPS20W" class="text-center d-block">
+                                            @* <i class="fas fa-microchip fa-2x"></i> *@
+                                            <h6 class="mt-3">DC UPS 20W</h6>
                                         </a>
-                                    </div>                                    
+                                    </div>
 
+                                    
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Product/DCDCConverters" class="text-center d-block">
+                                            @* <i class="fas fa-truck-loading fa-2x"></i> *@
+                                            <h6 class="mt-3">DC-DC Converters</h6>
+                                        </a>
+                                    </div>
+
+                                    
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Product/CustomizedCables" class="text-center d-block">
+                                            @* <i class="fas fa-lightbulb fa-2x"></i> *@
+                                            <h6 class="mt-3">Customized Cables</h6>
+                                        </a>
+                                    </div>
+
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Product/RefurbishedEquipment" class="text-center d-block">
+                                            @* <i class="fas fa-lightbulb fa-2x"></i> *@
+                                            <h6 class="mt-3">Refurbished Equipment</h6>
+                                        </a>
+                                    </div>
+
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Product/ElectronicsComponents" class="text-center d-block">
+                                            @* <i class="fas fa-lightbulb fa-2x"></i> *@
+                                            <h6 class="mt-3">Electronics Components</h6>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>                            
+                            <!-- Simple dropdown for small screens (<1024px) -->
+                            <div class="dropdown-menu simple-dropdown">
+
+                                <a class="dropdown-item" href="~/Product/ACDCAdapters">
+                                    AC-DC Adapters (BIS Certified)
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/POEPlusModules">
+                                    POE+ Modules
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/ReversePOE">
+                                    Reverse POE
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/DCUPS20W">
+                                    DC UPS 20W
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/DCDCConverters">
+                                    DC-DC Converters
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/CustomizedCables">
+                                    Customized Cables
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/RefurbishedEquipment">
+                                    Refurbished Equipment
+                                </a>
+
+                                <a class="dropdown-item" href="~/Product/ElectronicsComponents">
+                                    Electronics Components
+                                </a>
+
+                            </div>                            
+
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white fs-5" href="#">Brands</a>
+                            <!-- Mega Menu for large screens (>=1024px) -->
+                            <div class="dropdown-menu mega-menu">
+                                <div class="mega-menu-content">                                   
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Brands/TempoCommunications" class="text-center d-block">
+                                            @* <i class="fas fa-tools fa-2x"></i> *@
+                                            <h6 class="mt-3">Tempo Communications</h6>
+                                        </a>
+                                    </div>
+
+                                    
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Brands/KingfisherFiber">
+                                            @* <i class="fas fa-cogs fa-2x"></i> *@
+                                            <h6 class="mt-3">Kingfisher Fiber</h6>
+                                        </a>
+                                    </div>
+                                                                                                           
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Brands/WaveControl">
+                                            @* <i class="fas fa-microchip fa-2x"></i> *@
+                                            <h6 class="mt-3">Wave Control</h6>
+                                        </a>
+                                    </div>
+
+                                   
+                                    <div class="mega-menu-item text-center">
+                                        <a href="~/Brands/Consort">
+                                            @* <i class="fas fa-truck-loading fa-2x"></i> *@
+                                            <h6 class="mt-3">Consort</h6>
+                                        </a>
+                                    </div>                                   
                                 </div>
 
                             </div>
-
                             <!-- Simple dropdown for small screens (<1024px) -->
                             <div class="dropdown-menu simple-dropdown">
-                                <a class="dropdown-item" href="~/Home/Telecom">Telecom</a>
-                                <a class="dropdown-item" href="#">Power & Energy</a>
+
+                                <a class="dropdown-item" href="~/Brands/TempoCommunications">
+                                   Tempo Communications
+                                </a>
+                                <a class="dropdown-item" href="~/Brands/KingfisherFiber">
+                                    Kingfisher Fiber
+                                </a>
+
+                                <a class="dropdown-item" href="~/Brands/WaveControl">
+                                    Wave Control
+                                </a>
+
+                                <a class="dropdown-item" href="~/Brands/Consort">
+                                    Consort
+                                </a>
+
                             </div>
                         </li>
+                        <!-- Markets Menu -->
+                        
 
                         <li class="nav-item">
                             <a class="nav-link text-white fs-5" asp-controller="Home" asp-action="Contact">Contact</a>
@@ -469,27 +570,7 @@
             @RenderBody()
         </main>
     </div>
-
-    @* <section style="padding: 40px 0; background-color: #f8f9fa;">
-        <!-- Light gray bg for the section -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-7 col-md-10 col-sm-12">
-                    <!-- Card Wrapper -->
-                    <div class="card  border-0" style="background-color: #e7ebf2;">
-                        <div class="card-body text-center p-5">
-                            <!-- Heading -->
-                            <h4 class=" mb-3 fw-normal spa" style="letter-spacing:2px;">GET STARTED</h4>
-                            <h2 class="mb-2">We are ready to help with your</h2>
-                            <h2 class="mb-4">network equipment and services needs.</h2>
-
-                                                  
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> *@
+    
     <section style="background-color: white; color: #03045E; padding: 40px 0;">
         <div class="container">
             <div class="row">
@@ -506,16 +587,12 @@
 
                 <!-- Select Highlights Section -->
                 <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                    <h6 class="fw-bold mb-3">Markets</h6>
+                    <h6 class="fw-bold mb-3">Brands</h6>
                     <ul class="list-unstyledColor effectHover">
-                        <li><a href="~/Home/Telecom">Telecom</a></li>
-                        <li><a href="~/Home/OpticalNetworks">Optical Networks</a></li>
-                        <li><a href="~/Home/IndustrialElectronics">Industrial Electronics</a></li>
-                        <li><a href="~/Home/CPEDataNetworks">CPE Data Networks</a></li>
-                        @*  <li><a href="/" >Careers</a></li>
-                        <li><a href="/" >Executive Management Team</a></li>
-                        
-                        <li><a href="/" >Site Monitoring</a></li> *@
+                        <li><a href="~/Brands/TempoCommunications">Tempo Communications</a></li>
+                        <li><a href="~/Brands/KingfisherFiber">Kingfisher Fiber</a></li>
+                        <li><a href="~/Brands/WaveControl">Wave Control</a></li>
+                        <li><a href="~/Brands/Consort">Consort</a></li>
                     </ul>
                 </div>
 
@@ -524,10 +601,7 @@
                     <h6 class="fw-bold mb-3">About Company</h6>
                     <ul class="list-unstyledColor effectHover">
                         <li><a href="/Home/WhyUs">About Company</a></li>
-                        <li><a href="/Home/Contact">Contact Us</a></li>
-                        @* <li><a href="/">Privacy policy</a></li>
-                        <li><a href="/">Mission & Vision</a></li>
-                        <li><a href="/">Terms & Conditions</a></li> *@
+                        <li><a href="/Home/Contact">Contact Us</a></li>                        
                     </ul>
                 </div>
 
@@ -540,10 +614,7 @@
                         <li><a href="~/Home/ElectronicRefurbish">Electronic Refurbish</a></li>
                         <li><a href="~/Home/ElectronicPartsSales">Electronic Parts Sales</a></li>
                         <li><a href="~/Home/ReverseLogistics">Reverse Logistics & Supply Chain</a></li>
-                        <li><a href="~/Home/BespokeSolutions">Bespoke Solutions</a></li>
-                        @* <li><a href="#" >Equipment Manufacturers</a></li>
-                        <li><a href="#" >Enterprise</a></li>
-                        <li><a href="#" >DAS Neutral Hosts</a></li> *@
+                        <li><a href="~/Home/BespokeSolutions">Bespoke Solutions</a></li>                        
                     </ul>
                 </div>
             </div>

@@ -85,3 +85,51 @@ body {
     p{
         font-size:18px;
     }
+/* Responsive adjustments for Tablets and Mobile Devices */
+@media (max-width: 991px) {
+    .stats-section {
+        padding: 20px 15px;
+    }
+
+    .stats-container {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+        border-radius: 20px;
+    }
+
+    .stats-left {
+        width: 100%;
+        text-align: center;
+    }
+
+        .stats-left h2 {
+            font-size: 22px;
+        }
+
+    .stats-right {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+        .stat-card h1 {
+            font-size: 24px;
+        }
+}
+
+/* Extra small devices (Phones under 576px) */
+@media (max-width: 575px) {
+    .stats-right {
+        grid-template-columns: 1fr; /* Single column stack */
+    }
+
+    .stats-left h2 {
+        font-size: 20px;
+    }
+}
